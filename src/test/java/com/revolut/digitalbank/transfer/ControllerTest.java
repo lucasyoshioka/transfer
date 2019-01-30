@@ -1,7 +1,6 @@
 package com.revolut.digitalbank.transfer;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.revolut.digitalbank.infrastructure.server.GrizzlyServer;
 import org.junit.After;
 import org.junit.Before;
@@ -15,8 +14,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 

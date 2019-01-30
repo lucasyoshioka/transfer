@@ -6,7 +6,6 @@ import com.revolut.digitalbank.infrastructure.database.DatabaseException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 @Path("/transaction")
 public class Controller {

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a0af77c-19b7-4180-8f31-e319bec87249" name="Default Changelist" comment="" />
+    <list default="true" id="6a0af77c-19b7-4180-8f31-e319bec87249" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/PropertiesUtil.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,7 +29,7 @@
         <counts>
           <entry key="class" value="10" />
           <entry key="iml" value="1" />
-          <entry key="java" value="105" />
+          <entry key="java" value="107" />
           <entry key="properties" value="7" />
           <entry key="xml" value="11" />
         </counts>
@@ -36,7 +38,7 @@
         <counts>
           <entry key="CLASS" value="10" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="105" />
+          <entry key="JAVA" value="107" />
           <entry key="Properties" value="7" />
           <entry key="XML" value="11" />
         </counts>
@@ -44,14 +46,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="6" />
-          <entry key="java" value="12176" />
+          <entry key="java" value="12185" />
           <entry key="properties" value="299" />
           <entry key="xml" value="154" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12176" />
+          <entry key="JAVA" value="12185" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Properties" value="299" />
           <entry key="XML" value="154" />
@@ -73,11 +75,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/transfer/Service.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="124">
               <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/server/GrizzlyServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="412">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/PropertiesUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,6 +132,9 @@
       <find>post</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -120,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/main/java/digitalbank/transfer/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/digitalbank/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/config/PropertiesUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/PropertiesUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/config/HsqlDbConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/database/ApplicationDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/database/DatastoreException.java" />
@@ -143,6 +171,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/database/Datastore.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/revolut/digitalbank/transfer/ControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/PropertiesUtil.java" />
       </list>
     </option>
   </component>
@@ -159,6 +188,7 @@
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -215,6 +245,26 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="digitalbank" type="462c0819:PsiDirectoryNode" />
+              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="digitalbank" type="462c0819:PsiDirectoryNode" />
+              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="transfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transfer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="digitalbank" type="462c0819:PsiDirectoryNode" />
               <item name="transfer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -257,7 +307,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548891424841" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548892411869" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -428,7 +478,7 @@
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="2" weight="0.3286119" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.3286119" />
@@ -668,32 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/server/GrizzlyServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/database/DatabaseException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="46" lean-forward="true" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/PropertiesUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,6 +831,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/server/GrizzlyServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revolut/digitalbank/infrastructure/PropertiesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

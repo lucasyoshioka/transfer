@@ -20,20 +20,6 @@ public class Controller {
         gson = new Gson();
     }
 
-    @GET
-    @Path("/owner/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllTransactions(@PathParam("ownerId") Integer ownerId) {
-        Response response;
-        try {
-            List<Transaction> transactions = service.getTransactions(ownerId);
-            response = Response.status(Response.Status.OK).entity(gson.toJson(transactions)).build();
-        } catch (DatabaseException e) {
-            response = Response.status(Response.Status.NOT_FOUND).entity(gson.toJson(e.getMessage())).build();
-        }
-        return response;
-    }
-
     @POST
     @Path("/transfer")
     @Consumes(MediaType.APPLICATION_JSON)

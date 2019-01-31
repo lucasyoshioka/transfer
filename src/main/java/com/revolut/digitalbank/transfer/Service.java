@@ -4,7 +4,6 @@ import com.revolut.digitalbank.infrastructure.database.Datastore;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class Service {
 

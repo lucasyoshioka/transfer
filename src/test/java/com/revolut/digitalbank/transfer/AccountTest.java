@@ -1,6 +1,5 @@
 package com.revolut.digitalbank.transfer;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;

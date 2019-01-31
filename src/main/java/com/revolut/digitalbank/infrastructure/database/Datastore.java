@@ -3,7 +3,6 @@ package com.revolut.digitalbank.infrastructure.database;
 import com.revolut.digitalbank.transfer.Account;
 import com.revolut.digitalbank.transfer.Customer;
 import com.revolut.digitalbank.transfer.Transaction;
-import org.apache.commons.collections4.CollectionUtils;
 
 import java.math.BigDecimal;
 import java.util.*;

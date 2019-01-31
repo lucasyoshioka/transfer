@@ -1,1 +1,1 @@
-Here is a simple application for money transfer between accounts.
+Here is a simple application for money transfers between accounts.

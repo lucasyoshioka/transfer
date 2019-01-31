@@ -35,7 +35,7 @@ public class Service {
     }
 
     private Transaction createTransaction(Customer from, Customer destination) {
-        Transaction transaction = new Transaction(from, destination, LocalDateTime.now());
+        Transaction transaction = new Transaction(from, destination.getName(), LocalDateTime.now());
         datastore.save(transaction);
         return transaction;
 

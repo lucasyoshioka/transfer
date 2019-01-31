@@ -62,7 +62,7 @@ public class ControllerTest {
         Transaction transaction = gson.fromJson(response.readEntity(String.class), Transaction.class);
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("Lucas", transaction.getFrom().getName());
-        assertEquals("Larissa", transaction.getTo().getName());
+        assertEquals("Larissa", transaction.getNameTo());
         verifyBalance(target, 1, "920.00");
         verifyBalance(target, 2, "2080.00");
     }
@@ -94,6 +94,24 @@ public class ControllerTest {
         assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
     }
 
+    @Test
+    public void mustNotTransferWhenValueIsMissing() {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8080");
+        Response response = target.path("/transaction/transfer").request()
+                .post(Entity.entity(oneTransferWithNegativeValue(), MediaType.APPLICATION_JSON));
+        assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
+    }
+
+    @Test
+    public void mustNotTransferWhenDestinationCustomerIsMissing() {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8080");
+        Response response = target.path("/transaction/transfer").request()
+                .post(Entity.entity(oneTransferWithNegativeValue(), MediaType.APPLICATION_JSON));
+        assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
+    }
+
     private void verifyBalance(WebTarget target, Integer ownerId, String value) {
         Response balance = target.path("/transaction/balance/owner/" + ownerId).request().get();
         BalanceDto balanceDto = gson.fromJson(balance.readEntity(String.class), BalanceDto.class);
@@ -117,6 +135,16 @@ public class ControllerTest {
 
     private String oneTransferWithNegativeValue() {
         RequestDto dto = new RequestDto(1, 12, "-15000.00");
+        return gson.toJson(dto);
+    }
+
+    private String oneTransferWithoutValue() {
+        RequestDto dto = new RequestDto(1, 2, null);
+        return gson.toJson(dto);
+    }
+
+    private String oneTransferWithoutDestinationAccount() {
+        RequestDto dto = new RequestDto(1, null, "100.00");
         return gson.toJson(dto);
     }
 

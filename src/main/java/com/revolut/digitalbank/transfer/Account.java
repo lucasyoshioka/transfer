@@ -18,7 +18,7 @@ public class Account {
     public void deposit(BigDecimal value) {
         this.balance = this.balance.add(value);
     }
-    
+
     public void withdraw(BigDecimal value) {
         if (isBalanceNotEnough(value)) {
             throw new IllegalStateException("Balance is not enough.");

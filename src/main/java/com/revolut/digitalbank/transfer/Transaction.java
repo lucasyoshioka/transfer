@@ -12,7 +12,7 @@ public class Transaction {
     private Customer from;
 
     @Getter
-    private Customer to;
+    private String nameTo;
 
     private LocalDateTime dateTime;
 

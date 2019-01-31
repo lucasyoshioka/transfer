@@ -41,6 +41,12 @@ public class Customer {
     }
 
     public void execute() {
+        if (this.value == null) {
+            throw new IllegalArgumentException("Must specify a value to transfer.");
+        }
+        if (this.other == null) {
+            throw new IllegalArgumentException("Must specify a destination customer.");
+        }
         this.account.withdraw(this.value);
         other.deposit(this.value);
     }

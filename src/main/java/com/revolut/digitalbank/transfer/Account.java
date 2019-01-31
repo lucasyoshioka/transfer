@@ -15,10 +15,10 @@ public class Account {
     @Getter
     private BigDecimal balance;
 
-    private boolean isBalanceNotEnough(BigDecimal value) {
-        return this.balance.compareTo(value) < 0;
+    public void deposit(BigDecimal value) {
+        this.balance = this.balance.add(value);
     }
-
+    
     public void withdraw(BigDecimal value) {
         if (isBalanceNotEnough(value)) {
             throw new IllegalStateException("Balance is not enough.");
@@ -29,8 +29,8 @@ public class Account {
         this.balance = this.balance.subtract(value);
     }
 
-    public void deposit(BigDecimal value) {
-        this.balance = this.balance.add(value);
+    private boolean isBalanceNotEnough(BigDecimal value) {
+        return this.balance.compareTo(value) < 0;
     }
 
 }

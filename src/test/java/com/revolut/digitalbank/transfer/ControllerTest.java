@@ -62,7 +62,7 @@ public class ControllerTest {
         Transaction transaction = gson.fromJson(response.readEntity(String.class), Transaction.class);
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
         assertEquals("Lucas", transaction.getFrom().getName());
-        assertEquals("Larissa", transaction.getNameTo());
+        assertEquals("Larissa", transaction.getTo());
         verifyBalance(target, 1, "920.00");
         verifyBalance(target, 2, "2080.00");
     }

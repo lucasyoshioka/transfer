@@ -52,18 +52,8 @@ public class Datastore {
     }
 
     public void save(Transaction transaction) {
-        if (transactions.get(transaction.getFrom()) == null) {
-            transactions.put(transaction.getFrom(), new ArrayList<>());
-        }
+        transactions.computeIfAbsent(transaction.getFrom(), k -> new ArrayList<>());
         transactions.get(transaction.getFrom()).add(transaction);
-    }
-
-    public List<Transaction> getAllTransactions(Customer customer) {
-        List<Transaction> list = transactions.get(customer);
-        if (CollectionUtils.isEmpty(list)) {
-            throw new DatabaseException("No transactions for this customer.");
-        }
-        return list;
     }
 
 }

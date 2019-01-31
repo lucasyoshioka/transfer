@@ -19,10 +19,6 @@ public class Service {
         return new BalanceDto(customer.getBalance());
     }
 
-    public List<Transaction> getTransactions(Integer ownerId) {
-        return datastore.getAllTransactions(new Customer(ownerId));
-    }
-
     public Transaction transfer(RequestDto dto) {
         Customer sender = datastore.findBy(new Customer(dto.getFrom()));
         Customer recipient = datastore.findBy(new Customer(dto.getTo()));

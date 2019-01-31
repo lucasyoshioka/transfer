@@ -2,7 +2,7 @@ Here is a simple application for money transfers between accounts.
 
 To run this project, import all Maven dependencies and run com.revolut.digitalbank.Application.java.
 
-Check the class ControlleTest.java to see how this application works and all the business logic implemented.
+Check the class ControllerTest.java to see how this application works and all the business logic implemented.
 
 Technologies I used:
 

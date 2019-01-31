@@ -15,17 +15,17 @@ public class Service {
     }
 
     public BalanceDto getBalance(Integer ownerId) {
-        Owner owner = datastore.findBy(new Owner(ownerId));
-        return new BalanceDto(owner.getBalance());
+        Customer customer = datastore.findBy(new Customer(ownerId));
+        return new BalanceDto(customer.getBalance());
     }
 
     public List<Transaction> getTransactions(Integer ownerId) {
-        return datastore.getAllTransactions(new Owner(ownerId));
+        return datastore.getAllTransactions(new Customer(ownerId));
     }
 
     public Transaction transfer(RequestDto dto) {
-        Owner sender = datastore.findBy(new Owner(dto.getFrom()));
-        Owner recipient = datastore.findBy(new Owner(dto.getTo()));
+        Customer sender = datastore.findBy(new Customer(dto.getFrom()));
+        Customer recipient = datastore.findBy(new Customer(dto.getTo()));
         sender.transfer(new BigDecimal(dto.getValue()))
                 .to(recipient)
                 .execute();
@@ -34,7 +34,7 @@ public class Service {
         return createTransaction(sender, recipient);
     }
 
-    private Transaction createTransaction(Owner from, Owner destination) {
+    private Transaction createTransaction(Customer from, Customer destination) {
         Transaction transaction = new Transaction(from, destination, LocalDateTime.now());
         datastore.save(transaction);
         return transaction;

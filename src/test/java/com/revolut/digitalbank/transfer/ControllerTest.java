@@ -85,6 +85,15 @@ public class ControllerTest {
         assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
     }
 
+    @Test
+    public void mustNotTransferWhenValueToTransferIsNegative() {
+        Client client = ClientBuilder.newClient();
+        WebTarget target = client.target("http://localhost:8080");
+        Response response = target.path("/transaction/transfer").request()
+                .post(Entity.entity(oneTransferWithNegativeValue(), MediaType.APPLICATION_JSON));
+        assertEquals(Response.Status.NOT_FOUND.getStatusCode(), response.getStatus());
+    }
+
     private void verifyBalance(WebTarget target, Integer ownerId, String value) {
         Response balance = target.path("/transaction/balance/owner/" + ownerId).request().get();
         BalanceDto balanceDto = gson.fromJson(balance.readEntity(String.class), BalanceDto.class);
@@ -103,6 +112,11 @@ public class ControllerTest {
 
     private String oneTransferWithNoBalanceEnough() {
         RequestDto dto = new RequestDto(1, 12, "15000.00");
+        return gson.toJson(dto);
+    }
+
+    private String oneTransferWithNegativeValue() {
+        RequestDto dto = new RequestDto(1, 12, "-15000.00");
         return gson.toJson(dto);
     }
 

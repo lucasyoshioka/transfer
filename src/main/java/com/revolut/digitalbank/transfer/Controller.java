@@ -28,7 +28,7 @@ public class Controller {
             RequestDto requestDto = gson.fromJson(data, RequestDto.class);
             Transaction transaction = service.transfer(requestDto);
             response = Response.status(Response.Status.OK).entity(gson.toJson(transaction)).build();
-        } catch (IllegalStateException | DatabaseException e) {
+        } catch (IllegalArgumentException | IllegalStateException | DatabaseException e) {
             response = Response.status(Response.Status.NOT_FOUND).entity(gson.toJson(e.getMessage())).build();
         }
         return response;

@@ -1,34 +1,31 @@
 package com.revolut.digitalbank.transfer;
 
-import java.math.BigDecimal;
-import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
+import java.math.BigDecimal;
+
+@EqualsAndHashCode(of = "id")
+@AllArgsConstructor
 public class Account {
 
     private Integer id;
 
+    @Getter
     private BigDecimal balance;
-
-    public Account(Integer id, BigDecimal balance) {
-        this.id = id;
-        this.balance = balance;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void validate(BigDecimal value) {
-        if (isBalanceNotEnough(value)) {
-            throw new IllegalStateException("Balance is not enough.");
-        }
-    }
 
     private boolean isBalanceNotEnough(BigDecimal value) {
         return this.balance.compareTo(value) < 0;
     }
 
-    public void subtract(BigDecimal value) {
+    public void withdraw(BigDecimal value) {
+        if (isBalanceNotEnough(value)) {
+            throw new IllegalStateException("Balance is not enough.");
+        }
+        if (value.compareTo(BigDecimal.ZERO) < 0) {
+            throw new IllegalArgumentException("Value to transfer must be bigger than zero.");
+        }
         this.balance = this.balance.subtract(value);
     }
 
@@ -36,20 +33,4 @@ public class Account {
         this.balance = this.balance.add(value);
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Account account = (Account) o;
-        return Objects.equals(id, account.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 }

@@ -1,28 +1,18 @@
 package com.revolut.digitalbank.transfer;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
 public class RequestDto {
 
+    @Getter
     private Integer from;
 
+    @Getter
     private Integer to;
 
+    @Getter
     private String value;
 
-    public RequestDto(Integer from, Integer to, String value) {
-        this.from = from;
-        this.to = to;
-        this.value = value;
-    }
-
-    public Integer getFrom() {
-        return from;
-    }
-
-    public Integer getTo() {
-        return to;
-    }
-
-    public String getValue() {
-        return value;
-    }
 }

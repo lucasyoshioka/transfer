@@ -1,7 +1,7 @@
 package com.revolut.digitalbank.infrastructure.database;
 
 import com.revolut.digitalbank.transfer.Account;
-import com.revolut.digitalbank.transfer.Owner;
+import com.revolut.digitalbank.transfer.Customer;
 import com.revolut.digitalbank.transfer.Transaction;
 import org.apache.commons.collections4.CollectionUtils;
 
@@ -12,16 +12,16 @@ public class Datastore {
 
     private static Datastore datastore;
 
-    private Set<Owner> owners = new HashSet<>();
+    private Set<Customer> customers = new HashSet<>();
 
-    private Map<Owner, List<Transaction>> transactions = new HashMap<>();
+    private Map<Customer, List<Transaction>> transactions = new HashMap<>();
 
     private Datastore() {
-        save(new Owner(1, "Lucas", new Account(1, new BigDecimal("1000.00"))));
-        save(new Owner(2, "Larissa", new Account(2, new BigDecimal("2000.00"))));
-        save(new Owner(3, "Thiago", new Account(3, new BigDecimal("4000.00"))));
-        save(new Owner(4, "Daniel", new Account(4, new BigDecimal("8000.00"))));
-        save(new Owner(5, "Marcos", new Account(5, new BigDecimal("16000.00"))));
+        save(new Customer(1, "Lucas", new Account(1, new BigDecimal("1000.00"))));
+        save(new Customer(2, "Larissa", new Account(2, new BigDecimal("2000.00"))));
+        save(new Customer(3, "Thiago", new Account(3, new BigDecimal("4000.00"))));
+        save(new Customer(4, "Daniel", new Account(4, new BigDecimal("8000.00"))));
+        save(new Customer(5, "Marcos", new Account(5, new BigDecimal("16000.00"))));
     }
 
     public static Datastore getInstance() {
@@ -31,24 +31,24 @@ public class Datastore {
         return datastore;
     }
 
-    public void save(Owner owner) {
-        owners.add(owner);
+    public void save(Customer customer) {
+        customers.add(customer);
     }
 
-    public void remove(Owner owner) {
-        owners.remove(owner);
+    public void remove(Customer customer) {
+        customers.remove(customer);
     }
 
-    public void update(Owner owner) {
-        remove(owner);
-        save(owner);
+    public void update(Customer customer) {
+        remove(customer);
+        save(customer);
     }
 
-    public Owner findBy(Owner owner) {
-        return owners.stream()
-                .filter(a -> a.equals(owner))
+    public Customer findBy(Customer customer) {
+        return customers.stream()
+                .filter(a -> a.equals(customer))
                 .findFirst()
-                .orElseThrow(() -> new DatabaseException("Owner not found."));
+                .orElseThrow(() -> new DatabaseException("Customer not found."));
     }
 
     public void save(Transaction transaction) {
@@ -58,10 +58,10 @@ public class Datastore {
         transactions.get(transaction.getFrom()).add(transaction);
     }
 
-    public List<Transaction> getAllTransactions(Owner owner) {
-        List<Transaction> list = transactions.get(owner);
+    public List<Transaction> getAllTransactions(Customer customer) {
+        List<Transaction> list = transactions.get(customer);
         if (CollectionUtils.isEmpty(list)) {
-            throw new DatabaseException("No transactions for this owner.");
+            throw new DatabaseException("No transactions for this customer.");
         }
         return list;
     }

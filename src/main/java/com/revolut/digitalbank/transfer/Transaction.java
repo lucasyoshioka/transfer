@@ -1,31 +1,19 @@
 package com.revolut.digitalbank.transfer;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@AllArgsConstructor
 public class Transaction {
 
-    private Owner from;
+    @Getter
+    private Customer from;
 
-    private Owner to;
+    @Getter
+    private Customer to;
 
     private LocalDateTime dateTime;
-
-    public Transaction(Owner from, Owner to, LocalDateTime dateTime) {
-        this.from = from;
-        this.to = to;
-        this.dateTime = dateTime;
-    }
-
-    public Owner getFrom() {
-        return from;
-    }
-
-    public Owner getTo() {
-        return to;
-    }
-
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
 
 }
